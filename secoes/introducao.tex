@@ -1,0 +1,152 @@
+\section{Introdução} 
+
+\subsection{O que é?} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+%----------------------------------------------
+\begin{frame}
+	\frametitle{Primeira vez que o termo foi usado}
+
+	\begin{itemize}
+		\item Usamos a palavra parede (\textit{Wall}) para indicar proteção contra intrusos;
+		\item A primeira vez que o termo firewall foi utilizado para proteger a estrutura e os habitantes de uma construção do fogo;
+		\item \cite{aurelio} oi
+		\item O maior firewall de todos os tempos;
+	\end{itemize}
+
+\end{frame}
+%-----------------------------------------------
+\begin{frame}
+	\frametitle{Denifição}
+
+	\begin{itemize}
+		\item Em computação, um firewall é um sistema de segurança de redes de computadores;
+		\item Note que é um SISTEMA (pode ser um software, hardware ou um muro mesmo);
+		\item SIM, os três podem ser um sistema de firewall em computação (até o muro)!
+	\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\newcommand{\ondefire}[3]{
+	\begin{frame}
+		\frametitle{#1}
+		\begin{figure}
+			\centering
+			\includegraphics[height=.5\textheight]{imagens/#3}
+			\caption{#2}
+		\end{figure}
+	\end{frame}
+}
+
+\subsection{Onde posso encontrar firewalls?}
+
+\begin{frame}
+
+	\frametitle{É, onde eu posso encontrar esses firewall?}
+
+	\begin{block}{A pergunta que você deve fazer ao sistema que você desconfia ser um firewall é:}
+
+	"Você faz alguma coisa pra proteger meu sistema de ~coisas~ externas?"
+
+	\end{block}
+
+
+	\textbf{Se a coisa responder "sim", então ele é um firewall!}
+
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Tudo que protege seu sistema de ameaças externas!}
+	
+	Você não acredita, né? Então toma uns exemplos:
+
+	\begin{itemize}
+		\item{Dispositivos de firewall}
+		\item{Software desses dispositivos de firewall}
+		\item{Programas do seu sistema operacional}
+		\item{Firmware ou Sistema operacional do seu roteador/switch}
+		\item{O muro do local físico do servidor (por essa você não esperava, né?)}
+		\item{O Zé, o segurança que cuida do prédio onde está localizado o seu seu servidor}
+	\end{itemize}
+
+\end{frame}
+
+\subsection{Software}
+
+%ACL
+\ondefire{Software}{Access Control List}{acl.png}
+
+%IP TABLES
+\ondefire{Software}{iptables}{iptables.jpg}
+
+%ufw Uncomplicated Firewall
+\ondefire{Software}{UFW - Uncomplicated Firewall}{ufw.png}
+
+%do_windows
+\ondefire{Software}{Firewall do Windows}{dowindows.jpg}
+
+\subsection{Hardware}
+
+%NETGATE
+\ondefire{Hardware}{Netgate}{netgate.jpg}
+
+%DELL
+\ondefire{Hardware}{Dell}{dell.png}
+
+%Barracuda
+\ondefire{Hardware}{Barracuda}{barracuda.jpg}
+
+%Asa
+\ondefire{Hardware}{Asa}{asa.jpg}
+
+
+%------------------------------------------------
+
+\subsection{Analogia do castelo}
+
+%----------------------------------------------
+\begin{frame}
+	\frametitle{Analogia do Castelo \footnote{Inspirado em \cite{talal}.}}
+
+	%Imagem do Mário----------------------
+	\begin{figure}
+		\centering
+		\includegraphics[height=.75\textheight]{imagens/castelo-mario.png}
+		\caption{Castelo sem firewall}
+	\end{figure}
+
+\end{frame}
+
+%----------------------------------------------
+\newcommand{\analogia}[5][height=.5\textheight]{
+	\begin{frame}
+	\begin{block}{#2}
+		#3
+		\begin{figure}
+			\centering
+			\includegraphics[#1]{imagens/#4}
+			\caption{#5}
+		\end{figure}
+	\end{block}
+	\end{frame}
+}
+\analogia	{O firewall de borda proteje a rede de ataques externos}
+		{O fosso do castelo protege o castelo de ataques externos}
+		{castelo.jpg}
+		{O fosso do castelo é o "firewall" do castelo}
+
+\analogia	{O firewall pode permitir a entrada/saída da rede e negar a entrada/saída da rede}
+		{A ponte do castelo pode ser abaixada para permitir a entrada, e levantada para negar a entrada}
+		{castelo-ponte.jpg}
+		{A ponte pode recusar sua entrada, Mário.}
+
+\analogia	{Cada host na rede interna tem seu firewall nos sistemas operacionais}
+		{Os cidadãos do império tem suas casas com paredes para uma maior seguraça}
+		{castelo-analogia.png}
+		{Analogia do castelo \cite{tcpip}}
+
+%\item O firewall da borda da rede seria como se fosse o fosso do castelo;
+%\item A entrada na rede seria autorizada e fornecida pela ponte;
+%\item Cada host ou Sistema Operacional teria sua própria proteção, na analogia seriam as paredes de cada casa;
