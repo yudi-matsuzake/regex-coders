@@ -49,11 +49,11 @@
 
 \begin{frame}
 	\frametitle{O ponto}
-	\Large{O ponto casa com \azul{TUDO}.}
-	
-	i.e., o ponto casa com qualquer caractere!
-
-	\azul{Pergunta}: o ponto casa com um ponto?
+	\begin{itemize}
+		\item \Large{O ponto casa com \azul{TUDO}.}
+		\item i.e., o ponto casa com qualquer caractere!
+		\item \azul{Pergunta}: o ponto casa com um ponto?
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -290,14 +290,125 @@
 %------------------------------------------------
 \meta{Opcional}{?}
 
+\begin{frame}
+	\frametitle{O opcional}
+	\begin{itemize}
+		\item O opcional torna um caractere ou metacaractere de representação anterior em opcional;
+		\item Sua \azul{cardinalidade} é 0 ou 1;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento do opcional}
+	
+	\begin{center}
+	\begin{tabular}{c | c}
+		\textbf{Expressão} 	& \textbf{Casa com...} \\ \hline
+		fala[r!]?		& fala, falar, fala! 	\\ \hline
+		pessoas?		& pessoa, pessoas 	\\ \hline
+		(hiper)?mercado		& hipermercado, mercado \\ \hline
+	\end{tabular}
+	\end{center}
+\end{frame}
+
 %------------------------------------------------
 \meta{Asterisco}{*}
 
-%------------------------------------------------
+\begin{frame}
+	\frametitle{O asterisco}
+	\begin{itemize}
+		\item O asterisco é o guloso;
+		\item A cardinalidade dele é 0 ou 1 até \azul{infinito}!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento do asterisco}
+	
+	\begin{center}
+	\begin{tabular}{c | c}
+		\textbf{Expressão} 	& \textbf{Casa com...} \\ \hline
+		an*a			& , ana, annnnna, annnnnna... 	\\ \hline
+		[ar]*a			& arara, a, aararrarra... 	\\ \hline
+		10*			& 1, 100, 1000000000... \\ \hline
+	\end{tabular}
+	\end{center}
+\end{frame}
+
+\meta{Gulodice sem fim}{.*}
+
+\begin{frame}
+	\frametitle{Apresentando a gulodice infinita}
+
+	\begin{itemize}
+		\item Esses dois operadores juntos são muito úteis;
+		\item Com grandes poderes vêm grandes responsabilidades;
+		\item Esses operadores juntos casam com qualquer coisa, em qualquer quantidade;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Máquina de estados}
+
+	\begin{figure}
+		\centering
+		\includegraphics[height=.75\textheight]{./imagens/re/maq_estados.png}
+		\caption{Máquina de estados da expressão .*}
+	\end{figure}
+
+\end{frame}
+
+%%------------------------------------------------
 \meta{Mais}{+}
+
+\begin{frame}
+	\frametitle{O mais}
+	\begin{itemize}
+		\item É igual ao asterisco só que não é opcional;
+		\item \azul{\textbf{Tem}} que ter o caractere que está sendo quantificado;
+		\item A cardinalidade do operador mais é 1 até infinito.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Casamento do Mais}
+	\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Expressão} & \textbf{Casa com...} \\ \hline
+		an+a		& ana, annna, annnnnnna \\ \hline
+		cobras+		& cobra, cobrasssssssss \\ \hline
+		10+		& 10, 100, 100		\\ \hline
+	\end{tabular}
+	\end{center}
+\end{frame}
 
 %------------------------------------------------
 \meta{Chaves}{ \{m,n\} }
+
+\begin{frame}
+
+	\frametitle{As Chaves}
+	\begin{itemize}
+		\item As chaves tem um comportamento que consegue simular os operadores opcional(?), asterisco(*) e mais(+);
+		\item Ele pode as seguintes "caras":
+		\begin{enumerate}
+			\item \textbf{\{n\}}: repetir \textbf{n} vezes;
+			\item \textbf{\{n,m\}}: repetir de \textbf{n} até \textbf{m};
+			\item \textbf{\{n,\}}: repetir de \textbf{n} até infinito;
+			\item \textbf{\{,m\}}: repetir até \textbf{m} vezes.
+		\end{enumerate}
+		\item \azul{Pergunta}: Como o operador consegue simular os operadores \textbf{?}, \textbf{*} e \textbf{+}?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Respostas}
+	\begin{itemize}
+		\item \textbf{?}: \{1\}
+		\item \textbf{*}: \{0,\}
+		\item \textbf{+}: \{1,\}
+	\end{itemize}
+\end{frame}
 
 %------------------------------------------------
 \subsection{Tipo Âncora}
