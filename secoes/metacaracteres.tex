@@ -39,10 +39,14 @@
 
 \begin{frame}
 	\frametitle{Tipos}
-	\Large{\azul{Representante} e \azul{Quantificador}}
+	\Large{\azul{Representante}, \azul{Quantificador} e \azul{Âncora}}
 \end{frame}
 
-\subsection{Tipo representante}
+\subsection{Observações}
+\meta{Grupo}{(...)}
+\meta{Escape}{\textbackslash n}
+
+\subsection{Tipo Representante}
 
 %------------------------------------------------
 \meta{Ponto}{.}
@@ -416,11 +420,92 @@
 %------------------------------------------------
 \meta{Circunflexo}{\textasciicircum}
 
+\begin{frame}
+	\frametitle{O Circunflexo}
+
+	\begin{itemize}
+		\item O circunflexo casa com o começo da linha;
+		\item Não confunda com o caractere da lista!
+		\item O circunflexo só tem função de âncora no começo da linha, obviamente;
+		\item i.e. o caractere circunflexo (\textasciicircum) vai ser literal no meio da linha.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento do circunflexo}
+	\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Expressão} & \textbf{Casa com...} \\ \hline
+		\textasciicircum a & Todas  as linhas que começam com a \\ \hline
+		\textasciicircum \textasciicircum & Todas as linhas que começam com \textasciicircum \\ \hline
+	\end{tabular}
+	\end{center}
+\end{frame}
+
 %------------------------------------------------
 \meta{Cifrão}{\$}
 
+\begin{frame}
+	\frametitle{O cifrão}
+
+	\begin{itemize}
+		\item O cifrão casa com o final da linha;
+		\item O cifrão é literal no meio da linha;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento do cifrão}
+
+	\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Expressão} & \textbf{Casa com...} \\ \hline
+		a\$		& Uma linha que termina com a \\ \hline
+		\textasciicircum .{40}\$ & Uma linha com 40 caracteres \\ \hline
+		\textasciicircum \$ & \textbf{???}		\\ \hline
+	\end{tabular}
+	\end{center}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento do cifrão}
+
+	\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Expressão} & \textbf{Casa com...} \\ \hline
+		a\$		& Uma linha que termina com a \\ \hline
+		\textasciicircum .\{40\}\$ & Uma linha com 40 caracteres \\ \hline
+		\textasciicircum \$ & \textbf{Uma linha vazia}		\\ \hline
+	\end{tabular}
+	\end{center}
+
+\end{frame}
 %------------------------------------------------
 \meta{Borda}{\textbackslash b}
+\begin{frame}
+	\frametitle{A borda}
+
+	\begin{itemize}
+		\item Casa com a borda das palavras;
+		\item Definição de borda: espaço depois de letras;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento da borda}
+	\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Expressão} & \textbf{Casa com...} \\ \hline
+		\textbackslash dia & dia, diafragma, bom-dia! \\ \hline
+		\textbackslash dia & dia, diafragma, bom-dia! \\ \hline
+		dia \textbackslash & dia, melodia, bom-dia! \\ \hline
+		\textbackslash dia \textbackslash & dia, bom-dia! \\ \hline
+	\end{tabular}
+	\end{center}
+	
+\end{frame}
+
 
 %------------------------------------------------
 \subsection{Outros}
@@ -428,11 +513,55 @@
 %------------------------------------------------
 \meta{Ou}{|}
 
-%------------------------------------------------
-\meta{Escape}{\textbackslash n}
+\begin{frame}
+	\frametitle{O ou}
+	\begin{itemize}
+		\item É um operador lógico, casa com a ou b, onde a e b são expressões regulares;
+		\item \textbf{Exemplo}: $a|b$;
+	\end{itemize}
+\end{frame}
 
-%------------------------------------------------
-\meta{Grupo}{(...)}
+\begin{frame}
+	\frametitle{Casa com...?}
+	\Huge{\bf mal(a|inha|eta)}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Casa com...?}
+	\Huge{\bf bols(a|inha)}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Casa com...?}
+	\Huge{\bf pern(a|inha|eta)}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Casa com...?}
+	\Huge{\bf punh(o|inho)}
+\end{frame}
 
 %------------------------------------------------
 \meta{Retrovisor}{\textbackslash 1...\textbackslash 9}
+
+\begin{frame}
+	\frametitle{O retrovisor}
+
+	\begin{itemize}
+		\item O retrovisor "olha" para os grupos "(...)";
+		\item O vão de \textbackslash 1 a \textbackslash 9;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O casamento da borda}
+	\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Expressão} & \textbf{Casa com...} \\ \hline
+		(quero)-\textbackslash 1	& quero-quero \\ \hline
+		([A-Za-z]+)-\textbackslash 1  & qualquerpalavra-qualquerpalavra \\ \hline
+	\end{tabular}
+	\end{center}
+
+\end{frame}
+%------------------------------------------------
